@@ -43,4 +43,5 @@ def informe_completo(alumnado):
     partes = ["=== INFORME DE NOTAS ==="]
     # FASE 2: cada persoa engade AQUÍ a chamada á súa sección, por exemplo:
     # partes.append(seccion_xxx(alumnado))
+    partes.append(seccion_resumo(alumnado))
     return "\n\n".join(partes)
