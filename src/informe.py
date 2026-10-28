@@ -7,6 +7,8 @@ FASE 2 · Neste ficheiro traballan AS DÚAS PERSOAS.
 
 from src.estatisticas import media, nota_maxima, nota_minima
 from src.clasificacion import contar_aprobados, cualificacion
+from src import estatisticas as est
+from src import clasificacion as cla
 
 
 def seccion_resumo(alumnado):
@@ -20,9 +22,20 @@ def seccion_resumo(alumnado):
 
     Pistas: primeiro crea a lista só coas notas.
     A media leva dous decimais: f"Media: {valor:.2f}"
-    Une as liñas con "\\n".join(lista_de_linas)
+    Une as liñas con "\n".join(lista_de_linas)
     """
-    raise NotImplementedError
+    notas = [alumno["nota"] for alumno in alumnado]
+
+    liñas = [
+        f"Alumnado: {len(alumnado)}",
+        f"Media: {est.media(notas):.2f}",
+        f"Nota máxima: {est.nota_maxima(notas):.1f}",
+        f"Nota mínima: {est.nota_minima(notas):.1f}",
+        f"Aprobados: {cla.contar_aprobados(notas)}",
+    ]
+
+    return "\n".join(liñas)
+
 
 
 def seccion_listado(alumnado):
