@@ -58,7 +58,7 @@ def seccion_listado(alumnado):
 
 def informe_completo(alumnado):
     """Xunta todas as seccións do informe."""
-    partes = ["=== INFORME DE NOTAS ==="]
+    partes = [seccion_resumo(alumnado)]
     # FASE 2: cada persoa engade AQUÍ a chamada á súa sección, por exemplo:
     # partes.append(seccion_xxx(alumnado))
     partes.append(seccion_listado(alumnado))
